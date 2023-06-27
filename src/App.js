@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Header";
+import Content from "./Content";
+import CoinTossCounter from "./CoinTossCounter";
+import React, { useState } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [loggedIn, setLoggedIn] = useState(false);
+	const toggleLoggedIn = () => setLoggedIn(!loggedIn);
+	return (
+		<>
+			<div>
+				<Header loggedIn={loggedIn} handleLoggedInClick={toggleLoggedIn} />
+				<Content loggedIn={loggedIn} text="My content." />
+				<CoinTossCounter />
+			</div>
+		</>
+	);
 }
-
 export default App;
