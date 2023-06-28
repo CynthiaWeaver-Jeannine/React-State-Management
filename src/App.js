@@ -3,6 +3,7 @@ import Header from "./Header";
 import Content from "./Content";
 import CoinTossCounter from "./CoinTossCounter";
 import React, { useState } from "react";
+import ProfileEdit from "./ProfileEdit";
 
 function App() {
 	const [loggedIn, setLoggedIn] = useState(false);
@@ -13,6 +14,7 @@ function App() {
 				<Header loggedIn={loggedIn} handleLoggedInClick={toggleLoggedIn} />
 				<Content loggedIn={loggedIn} text="My content." />
 				<CoinTossCounter />
+				<ProfileEdit />
 			</div>
 		</>
 	);
